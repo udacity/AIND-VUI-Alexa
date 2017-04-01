@@ -1,0 +1,19 @@
+{
+  "name": "skill-udacityvui-nodejs-historyfact-i18n",
+  "version": "1.0.0",
+  "description": "I18n version of history fact skill.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "alexa",
+    "skill",
+    "fact"
+  ],
+  "author": "Dana Sheahen",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "alexa-sdk": "^1.0.7"
+  }
+}
