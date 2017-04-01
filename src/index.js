@@ -1,8 +1,14 @@
 'use strict';
 var Alexa = require('alexa-sdk');
-var APP_ID = undefined;  // TODO replace with your app ID (OPTIONAL).
+var APP_ID = undefined;
 var facts = require('./facts');
 
+/*
+    TODO modify messages to match your project
+    TODO add messages needed for your additional intents and prompts
+    TODO add variety to the "GET_FACT_MESSAGE" by creating at least 3 total alternatives 
+        that can be randomized
+*/
 var languageStrings = {
     "en": {
         "translation": {
@@ -37,6 +43,17 @@ exports.handler = function(event, context, callback) {
     alexa.execute();
 };
 
+/*
+    TODO add an intent for specifying a fact by year and name it 'GetNewYearFactIntent'
+    TODO provide a function for the new intent named 'GetYearFact' 
+        that emits a randomized fact that includes the year requested by the user
+        - if such a fact is not available, tell the user this and provide an alternative fact.
+    TODO Keep the session open by providing the fact with :askWithCard instead of :tellWithCard
+        - make sure the user knows that they need to respond
+        - provide a reprompt that lets the user know how they can respond
+    TODO Provide a randomized response for the GET_FACT_MESSAGE
+*/
+
 var handlers = {
     'LaunchRequest': function () {
         this.emit('GetFact');
@@ -45,7 +62,7 @@ var handlers = {
         this.emit('GetFact');
     },
     'GetFact': function () {
-        // Get a random space fact from the space facts list
+        // Get a random fact from the facts list
         // Use this.t() to get corresponding language data
         var factArr = this.t('FACTS');
         var factIndex = Math.floor(Math.random() * factArr.length);
