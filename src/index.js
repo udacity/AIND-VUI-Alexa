@@ -72,6 +72,9 @@ var handlers = {
         var speechOutput = this.t("GET_FACT_MESSAGE") + randomFact;
         this.emit(':tellWithCard', speechOutput, this.t("SKILL_NAME"), randomFact)
     },
+    'GetNewYearFactIntent': function () {
+        //TODO your code here
+    },
     'AMAZON.HelpIntent': function () {
         var speechOutput = this.t("HELP_MESSAGE");
         var reprompt = this.t("HELP_MESSAGE");

@@ -1,9 +1,9 @@
 module.exports = {
   "GetNewFactIntent": {
     "session": {
-      "sessionId": "SessionId.dummy",
+      "sessionId": null,
       "application": {
-        "applicationId": "amzn1.ask.skill.dummy"
+        "applicationId": null
       },
       "attributes": {},
       "user": {
@@ -13,7 +13,7 @@ module.exports = {
     },
     "request": {
       "type": "IntentRequest",
-      "requestId": "DummyId.dummy",
+      "requestId": null,
       "locale": "en-US",
       "timestamp": "2017-04-26T19:29:57Z",
       "intent": {
@@ -23,11 +23,12 @@ module.exports = {
     },
     "version": "1.0"
   },
+
   "GetNewYearFactIntent": {
     "session": {
-      "sessionId": "SessionId.dummy",
+      "sessionId": null,
       "application": {
-        "applicationId": "amzn1.ask.skill.dummy"
+        "applicationId": null
       },
       "attributes": {},
       "user": {
@@ -37,26 +38,27 @@ module.exports = {
     },
     "request": {
       "type": "IntentRequest",
-      "requestId": "DummyId.dummy",
+      "requestId": null,
       "locale": "en-US",
       "timestamp": "2017-04-26T19:29:57Z",
       "intent": {
         "name": "GetNewYearFactIntent",
         "slots": {
-           "FACT_YEAR": {
-                "name": "FACT_YEAR",
-                "value": "2002"
+          "FACT_YEAR": {
+            "name": "FACT_YEAR",
+            "value": "1956"
           }
         }
       }
     },
     "version": "1.0"
   },
-  "HelpIntent": {
+
+  "GetNewYearFactIntent_0000": {
     "session": {
-      "sessionId": "SessionId.dummy",
+      "sessionId": null,
       "application": {
-        "applicationId": "amzn1.ask.skill.dummy"
+        "applicationId": null
       },
       "attributes": {},
       "user": {
@@ -66,7 +68,37 @@ module.exports = {
     },
     "request": {
       "type": "IntentRequest",
-      "requestId": "DummyId.dummy",
+      "requestId": null,
+      "locale": "en-US",
+      "timestamp": "2017-04-26T19:29:57Z",
+      "intent": {
+        "name": "GetNewYearFactIntent",
+        "slots": {
+          "FACT_YEAR": {
+            "name": "FACT_YEAR",
+            "value": "0000"
+          }
+        }
+      }
+    },
+    "version": "1.0"
+  },
+
+  "HelpIntent": {
+    "session": {
+      "sessionId": null,
+      "application": {
+        "applicationId": null
+      },
+      "attributes": {},
+      "user": {
+        "userId": null
+      },
+      "new": true
+    },
+    "request": {
+      "type": "IntentRequest",
+      "requestId": null,
       "locale": "en-US",
       "timestamp": "2017-04-26T19:29:57Z",
       "intent": {
@@ -76,11 +108,12 @@ module.exports = {
     },
     "version": "1.0"
   },
+  
   "StopIntent": {
     "session": {
-      "sessionId": "SessionId.dummy",
+      "sessionId": null,
       "application": {
-        "applicationId": "amzn1.ask.skill.dummy"
+        "applicationId": null
       },
       "attributes": {},
       "user": {
@@ -90,7 +123,7 @@ module.exports = {
     },
     "request": {
       "type": "IntentRequest",
-      "requestId": "DummyId.dummy",
+      "requestId": null,
       "locale": "en-US",
       "timestamp": "2017-04-26T19:29:57Z",
       "intent": {
@@ -100,11 +133,12 @@ module.exports = {
     },
     "version": "1.0"
   },
+
   "CancelIntent": {
     "session": {
-      "sessionId": "SessionId.dummy",
+      "sessionId": null,
       "application": {
-        "applicationId": "amzn1.ask.skill.dummy"
+        "applicationId": null
       },
       "attributes": {},
       "user": {
@@ -114,7 +148,7 @@ module.exports = {
     },
     "request": {
       "type": "IntentRequest",
-      "requestId": "DummyId.dummy",
+      "requestId": null,
       "locale": "en-US",
       "timestamp": "2017-04-26T19:29:57Z",
       "intent": {
