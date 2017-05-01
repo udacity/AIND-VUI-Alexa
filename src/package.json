@@ -1,19 +1,26 @@
 {
-  "name": "skill-udacityvui-nodejs-historyfact-i18n",
+  "name": "alexa-skill-aind",
   "version": "1.0.0",
-  "description": "I18n version of history fact skill.",
+  "description": "student code",
   "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "alexa-sdk": "^1.0.7"
+  },
+  "devDependencies": {
+    "aws-lambda-mock-context": "^3.0.1",
+    "chai": "^3.5.0",
+    "mocha": "^3.3.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [
     "alexa",
-    "skill",
-    "fact"
+    "skill"
   ],
-  "author": "Dana Sheahen",
-  "license": "Apache-2.0",
-  "dependencies": {
-    "alexa-sdk": "^1.0.7"
-  }
+  "author": "Udacity student",
+  "license": "ISC"
 }
