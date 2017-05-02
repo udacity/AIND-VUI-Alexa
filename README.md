@@ -10,7 +10,7 @@ If you haven't already done so, complete the [Space Geek lab](https://classroom.
 
 #### Starter Code
 Install your starter code locally
-* Download or clone the [starter code](https://github.com/udacity/AIND-VUI-Alexa)
+* Download or clone the [starter code](https://github.com/udacity/AIND-VUI-Alexa) from GitHub
 * Save it in a directory named `AIND-VUI-Alexa`
 
 #### Environment

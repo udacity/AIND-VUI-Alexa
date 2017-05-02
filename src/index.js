@@ -44,7 +44,7 @@ exports.handler = function(event, context, callback) {
 };
 
 /*
-    TODO add an intent for specifying a fact by year and name it 'GetNewYearFactIntent'
+    TODO add an intent for specifying a fact by year named 'GetNewYearFactIntent'
     TODO provide a function for the new intent named 'GetYearFact' 
         that emits a randomized fact that includes the year requested by the user
         - if such a fact is not available, tell the user this and provide an alternative fact.
