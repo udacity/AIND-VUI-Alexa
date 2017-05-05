@@ -1,7 +1,7 @@
 # Project: Build an Alexa History Skill
-![Alexa skill process overview](images/skillOverview.png)
 
 It's time to create your own Alexa Skill!.  In this project, you’ll build a fully functional skill for [Amazon’s Alexa](https://developer.amazon.com/alexa) that provides year-dated facts from AI History (or some other History of your choosing).  Through the process, you’ll get to use the [Alexa Skills Kit (ASK)](https://developer.amazon.com/alexa-skills-kit) - a current state of the art API for building voice systems.  
+![Alexa skill process overview](images/skillOverview.png)
 
 # Getting Started
 
@@ -91,3 +91,18 @@ In addition to testing with unit tests and the Service Simulator, you may find i
 * [Echosim.io](https://echosim.io/): web browser simulator
 * [Alexa app](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/providing-home-cards-for-the-amazon-alexa-app): view card
 * Amazon Echo, Echo Dot, Echo Tap devices: if the device is on the same account as the development code, you can "open" the skill there.
+
+# Submission
+
+ADD PROJECT ASSISTANT INSTRUCTIONS
+
+Submit your work by uploading a .zip file containing the following directories and files:
+- `speechAssets` (directory)
+   - `IntentSchema.json`
+   - `SampleUtterances_en_US.txt`
+- `src` (directory)
+   - `Index.js`
+   - `Facts.js`
+- `skill_simulator.png`
+
+You can view the rubric [here](https://docs.google.com/a/knowlabs.com/document/d/1R8AZPZzqm8_scGg4jns7S_WvafjoieZpgCEb5QyMju4/edit?usp=sharing)
