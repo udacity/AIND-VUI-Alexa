@@ -5,10 +5,8 @@ var APP_ID_TEST = "mochatest";  // used for mocha tests to prevent warning
 var facts = require('./facts');
 
 /*
-    TODO modify messages to match your project
-    TODO add messages needed for your additional intents and prompts
-    TODO add variety to the "GET_FACT_MESSAGE" by creating at least 3 total alternatives 
-        that can be randomized
+    TODO (Part 2) add messages needed for the additional intent
+    TODO (Part 3) add reprompt messages as needed
 */
 var languageStrings = {
     "en": {
@@ -19,7 +17,7 @@ var languageStrings = {
             "HELP_MESSAGE" : "You can say tell me a fact, or, you can say exit... What can I help you with?",
             "HELP_REPROMPT" : "What can I help you with?",
             "STOP_MESSAGE" : "Goodbye!",
-            "SKILL_NAME" : "My American History Facts"
+            "SKILL_NAME" : "My History Facts"
         }
     }
 };
@@ -38,14 +36,16 @@ exports.handler = function(event, context, callback) {
 };
 
 /*
-    TODO add an intent for specifying a fact by year named 'GetNewYearFactIntent'
-    TODO provide a function for the new intent named 'GetYearFact' 
+    TODO (Part 2) add an intent for specifying a fact by year named 'GetNewYearFactIntent'
+    TODO (Part 2) provide a function for the new intent named 'GetYearFact' 
         that emits a randomized fact that includes the year requested by the user
         - if such a fact is not available, tell the user this and provide an alternative fact.
-    TODO Keep the session open by providing the fact with :askWithCard instead of :tellWithCard
+    TODO (Part 3) Keep the session open by providing the fact with :askWithCard instead of :tellWithCard
         - make sure the user knows that they need to respond
         - provide a reprompt that lets the user know how they can respond
-    TODO Provide a randomized response for the GET_FACT_MESSAGE
+    TODO (Part 3) Provide a randomized response for the GET_FACT_MESSAGE
+        - replace the single message above with an array of messages
+        - randomize this starting portion of the response for conversational variety
 */
 
 var handlers = {
@@ -59,8 +59,7 @@ var handlers = {
         // Get a random fact from the facts list
         // Use this.t() to get corresponding language data
         var factArr = this.t('FACTS');
-        var factIndex = Math.floor(Math.random() * factArr.length);
-        var randomFact = factArr[factIndex];
+        var randomFact = randomPhrase(factArr);
 
         // Create speech output
         var speechOutput = this.t("GET_FACT_MESSAGE") + randomFact;
@@ -80,4 +79,12 @@ var handlers = {
     'AMAZON.StopIntent': function () {
         this.emit(':tell', this.t("STOP_MESSAGE"));
     }
+};
+
+function randomPhrase (phraseArr) {
+    // returns a random phrase
+    // where phraseArr is an array of string phrases
+    var i = 0;
+    i=Math.floor(Math.random() * phraseArr.length);
+    return(phraseArr[i]);
 };
