@@ -1,6 +1,7 @@
 'use strict';
 var Alexa = require('alexa-sdk');
-var APP_ID = undefined;
+var APP_ID = undefined;  // can be replaced with your app ID if publishing
+var APP_ID_TEST = "mochatest";  // used for mocha tests to prevent warning
 var facts = require('./facts');
 
 /*
@@ -18,18 +19,7 @@ var languageStrings = {
             "HELP_MESSAGE" : "You can say tell me a fact, or, you can say exit... What can I help you with?",
             "HELP_REPROMPT" : "What can I help you with?",
             "STOP_MESSAGE" : "Goodbye!",
-        }
-    },
-    "en-US": {
-        "translation": {
-            "FACTS": facts.FACTS_EN,
             "SKILL_NAME" : "My American History Facts"
-        }
-    },
-    "en-GB": {
-        "translation": {
-            "FACTS": facts.FACTS_EN,
-            "SKILL_NAME" : "My British History Facts"
         }
     }
 };
@@ -37,6 +27,10 @@ var languageStrings = {
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
     alexa.APP_ID = APP_ID;
+    // set a test appId if running the mocha local tests
+    if(event.session.application.applicationId == "mochatest") {
+        alexa.appId = APP_ID_TEST
+    } 
     // To enable string internationalization (i18n) features, set a resources object.
     alexa.resources = languageStrings;
     alexa.registerHandlers(handlers);
