@@ -3,7 +3,7 @@ module.exports = {
     "session": {
       "sessionId": null,
       "application": {
-        "applicationId": null
+        "applicationId": "mochatest"
       },
       "attributes": {},
       "user": {
@@ -28,7 +28,7 @@ module.exports = {
     "session": {
       "sessionId": null,
       "application": {
-        "applicationId": null
+        "applicationId": "mochatest"
       },
       "attributes": {},
       "user": {
@@ -58,7 +58,7 @@ module.exports = {
     "session": {
       "sessionId": null,
       "application": {
-        "applicationId": null
+        "applicationId": "mochatest"
       },
       "attributes": {},
       "user": {
@@ -88,7 +88,7 @@ module.exports = {
     "session": {
       "sessionId": null,
       "application": {
-        "applicationId": null
+        "applicationId": "mochatest"
       },
       "attributes": {},
       "user": {
@@ -113,7 +113,7 @@ module.exports = {
     "session": {
       "sessionId": null,
       "application": {
-        "applicationId": null
+        "applicationId": "mochatest"
       },
       "attributes": {},
       "user": {
@@ -138,7 +138,7 @@ module.exports = {
     "session": {
       "sessionId": null,
       "application": {
-        "applicationId": null
+        "applicationId": "mochatest"
       },
       "attributes": {},
       "user": {
