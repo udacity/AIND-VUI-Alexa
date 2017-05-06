@@ -186,10 +186,11 @@ describe("Starter Code Tests", function () {
             it("should have a random spoken response", () => {
                 var msg = speechResponse.response.outputSpeech.ssml;
                 resultArr.push(msg);
-                if (resultArr.length == 3) {
-                    var atLeastOneNew = resultArr[0] != resultArr[1] || resultArr[1] != resultArr[2];
-                    expect(atLeastOneNew).to.be.true
+                var atLeastOneNew = false;
+                if (resultArr.length >= 3) {
+                    atLeastOneNew = resultArr[0] != resultArr[1] || resultArr[1] != resultArr[2];
                 }
+                expect(atLeastOneNew).to.be.true
             })
         })
     });
