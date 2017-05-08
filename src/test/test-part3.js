@@ -27,8 +27,7 @@ describe("Test Part 3", function () {
             it("should have a reprompt available", () => {
                 var msg = speechResponse.response.outputSpeech.ssml;
                 resultArr.push(msg);
-                expect(speechResponse.response.reprompt).not.to.be.null
-                expect(speechResponse.response.reprompt).to.be.true
+                expect(speechResponse.response.reprompt).not.to.be.undefined
             })
         })
         describe("Testing conversational elements of GetNewFactIntent 2 of 3", function () {
@@ -85,11 +84,9 @@ describe("Test Part 3", function () {
             })
             describe("The response keeps the conversation open", function () {
                 it("should have a reprompt available", () => {
-                    expect(speechResponse.response.reprompt).not.to.be.null
-                    expect(speechResponse.response.reprompt).to.be.true
+                    expect(speechResponse.response.reprompt).not.to.be.undefined
                 })
                 it("should not end the alexa session", function () {
-                    expect(speechResponse.response.shouldEndSession).not.to.be.null
                     expect(speechResponse.response.shouldEndSession).to.be.false
                 })
             })

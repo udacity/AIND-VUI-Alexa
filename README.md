@@ -105,4 +105,4 @@ Submit your work by uploading a .zip file containing the following directories a
    - `Facts.js`
 - `skill_simulator.png`
 
-You can view the rubric [here](https://docs.google.com/a/knowlabs.com/document/d/1R8AZPZzqm8_scGg4jns7S_WvafjoieZpgCEb5QyMju4/edit?usp=sharing)
+You can view the [BETA] rubric [here](https://docs.google.com/document/d/1R8AZPZzqm8_scGg4jns7S_WvafjoieZpgCEb5QyMju4/edit?usp=sharing)
