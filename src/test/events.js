@@ -3,7 +3,7 @@ module.exports = {
     "session": {
       "sessionId": null,
       "application": {
-        "applicationId": null
+        "applicationId": "mochatest"
       },
       "attributes": {},
       "user": {
@@ -28,7 +28,7 @@ module.exports = {
     "session": {
       "sessionId": null,
       "application": {
-        "applicationId": null
+        "applicationId": "mochatest"
       },
       "attributes": {},
       "user": {
@@ -46,7 +46,7 @@ module.exports = {
         "slots": {
           "FACT_YEAR": {
             "name": "FACT_YEAR",
-            "value": "1956"
+            "value": "9999"
           }
         }
       }
@@ -54,11 +54,11 @@ module.exports = {
     "version": "1.0"
   },
 
-  "GetNewYearFactIntent_0000": {
+  "GetNewYearFactIntent_9999": {
     "session": {
       "sessionId": null,
       "application": {
-        "applicationId": null
+        "applicationId": "mochatest"
       },
       "attributes": {},
       "user": {
@@ -76,7 +76,7 @@ module.exports = {
         "slots": {
           "FACT_YEAR": {
             "name": "FACT_YEAR",
-            "value": "0000"
+            "value": "9999"
           }
         }
       }
@@ -88,7 +88,7 @@ module.exports = {
     "session": {
       "sessionId": null,
       "application": {
-        "applicationId": null
+        "applicationId": "mochatest"
       },
       "attributes": {},
       "user": {
@@ -113,7 +113,7 @@ module.exports = {
     "session": {
       "sessionId": null,
       "application": {
-        "applicationId": null
+        "applicationId": "mochatest"
       },
       "attributes": {},
       "user": {
@@ -138,7 +138,7 @@ module.exports = {
     "session": {
       "sessionId": null,
       "application": {
-        "applicationId": null
+        "applicationId": "mochatest"
       },
       "attributes": {},
       "user": {

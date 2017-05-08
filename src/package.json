@@ -6,14 +6,6 @@
   "directories": {
     "test": "test"
   },
-  "dependencies": {
-    "alexa-sdk": "^1.0.7"
-  },
-  "devDependencies": {
-    "aws-lambda-mock-context": "^3.0.1",
-    "chai": "^3.5.0",
-    "mocha": "^3.3.0"
-  },
   "scripts": {
     "test": "mocha"
   },
@@ -22,5 +14,9 @@
     "skill"
   ],
   "author": "Udacity student",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "none"
+  }
 }

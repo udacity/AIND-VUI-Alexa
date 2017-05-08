@@ -1,4 +1,0 @@
-GetNewFactIntent a fact
-GetNewFactIntent tell me a fact
-GetNewFactIntent give me a fact
-GetNewFactIntent give me something
