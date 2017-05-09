@@ -6,6 +6,7 @@ var sch = JSON.parse(fs.readFileSync('../speechAssets/IntentSchema.json', 'utf-8
 var utterances = fs.readFileSync('../speechAssets/SampleUtterances_en_US.txt', "utf-8");
 var intents = sch.intents;
 var facts = require('../facts');
+var utils = require('./utils');
 
 describe("Test Part 1", function () {
     describe("Testing utterance list", function () {
@@ -21,7 +22,7 @@ describe("Test Part 1", function () {
         it('should each include a 4-digit year', function () {
             var has4Digits = true;
             for (var i = 0; i < facts.FACTS_EN.length; i++) {
-                if (!hasFourDigitNumber(facts.FACTS_EN[i])) {
+                if (!utils.hasFourDigitNumber(facts.FACTS_EN[i])) {
                     has4Digits = false;
                     console.log('FAILED FACT:' + facts.FACTS_EN[i])
                 }
@@ -30,7 +31,3 @@ describe("Test Part 1", function () {
         })
     })
 });
-
-function hasFourDigitNumber(myString) {
-    return /\d{4}/.test(myString);
-}

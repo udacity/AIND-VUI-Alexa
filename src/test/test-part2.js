@@ -5,50 +5,23 @@ var index = require('../index');
 var events = require('./events');
 var resultArr = [];
 var facts = require('../facts');
+var utils = require('./utils');
 var fs = require("fs");
 var sch = JSON.parse(fs.readFileSync('../speechAssets/IntentSchema.json', 'utf-8'));
 var utterances = fs.readFileSync('../speechAssets/SampleUtterances_en_US.txt', "utf-8");
 var intents = sch.intents;
 var yearsArr = [];
 for (var i = 0; i < facts.FACTS_EN.length; i++) {
-    var yearFound = grepFourDigitNumber(facts.FACTS_EN[i]);
+    var yearFound = utils.grepFourDigitNumber(facts.FACTS_EN[i]);
     if (yearFound != null) {
         yearsArr.push(yearFound)
     }
 };
 var reqWithYear = events.GetNewYearFactIntent;
 if (yearsArr.length > 0) {
-    reqWithYear = {
-        "session": {
-            "sessionId": null,
-            "application": {
-                "applicationId": "mochatest"
-            },
-            "attributes": {},
-            "user": {
-                "userId": null
-            },
-            "new": true
-        },
-        "request": {
-            "type": "IntentRequest",
-            "requestId": null,
-            "locale": "en-US",
-            "timestamp": "2017-04-26T19:29:57Z",
-            "intent": {
-                "name": "GetNewYearFactIntent",
-                "slots": {
-                    "FACT_YEAR": {
-                        "name": "FACT_YEAR",
-                        "value": yearsArr[0]
-                    }
-                }
-            }
-        },
-        "version": "1.0"
-    }
-}
-
+    reqWithYear = events.GetNewYearFactIntent2; // deep copy of GetNewYearFactIntent
+    reqWithYear.request.intent.slots.FACT_YEAR.value = yearsArr[0];
+};
 // https://www.thepolyglotdeveloper.com/2016/08/test-amazon-alexa-skills-offline-with-mocha-and-chai-for-node-js/
 const context = require('aws-lambda-mock-context');
 const ctx1 = context();
@@ -142,7 +115,7 @@ describe("Test Part 2", function () {
         var speechError = null;
 
         before(function (done) {
-            index.handler(events.GetNewYearFactIntent_9999, ctx2)
+            index.handler(events.GetNewYearFactIntent, ctx2)
             ctx2.Promise
                 .then(resp => { speechResponse = resp; done(); })
                 .catch(err => { speechError = err; done(); })
@@ -160,7 +133,7 @@ describe("Test Part 2", function () {
         var speechError = null;
 
         before(function (done) {
-            index.handler(events.GetNewYearFactIntent_9999, ctx3)
+            index.handler(events.GetNewYearFactIntent, ctx3)
             ctx3.Promise
                 .then(resp => { speechResponse = resp; done(); })
                 .catch(err => { speechError = err; done(); })
@@ -178,7 +151,7 @@ describe("Test Part 2", function () {
         var speechError = null;
 
         before(function (done) {
-            index.handler(events.GetNewYearFactIntent_9999, ctx4)
+            index.handler(events.GetNewYearFactIntent, ctx4)
             ctx4.Promise
                 .then(resp => { speechResponse = resp; done(); })
                 .catch(err => { speechError = err; done(); })
@@ -187,7 +160,7 @@ describe("Test Part 2", function () {
             it("should have random spoken responses", () => {
                 var msg = speechResponse.response.outputSpeech.ssml;
                 resultArr.push(msg);
-                if (resultArr.length == 3) {
+                if (resultArr.length >= 3) {
                     var atLeastOneNew = resultArr[0] != resultArr[1] || resultArr[1] != resultArr[2];
                     expect(atLeastOneNew).to.be.true
                 }
@@ -195,11 +168,3 @@ describe("Test Part 2", function () {
         })
     })
 });
-function grepFourDigitNumber(myString) {
-    if (/\d{4}/.test(myString)) {
-        return myString.match(/\d{4}/)[0];
-    }
-    else {
-        return null
-    }
-}

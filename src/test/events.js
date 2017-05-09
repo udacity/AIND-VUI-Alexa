@@ -54,7 +54,7 @@ module.exports = {
     "version": "1.0"
   },
 
-  "GetNewYearFactIntent_9999": {
+  "GetNewYearFactIntent2": {
     "session": {
       "sessionId": null,
       "application": {

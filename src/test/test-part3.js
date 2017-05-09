@@ -3,6 +3,8 @@ var expect = require('chai').expect;
 var assert = require('chai').assert;
 var index = require('../index');
 var events = require('./events');
+var facts = require('../facts');
+var utils = require('./utils');
 var resultArr = []
 
 // https://www.thepolyglotdeveloper.com/2016/08/test-amazon-alexa-skills-offline-with-mocha-and-chai-for-node-js/
@@ -11,7 +13,19 @@ const ctx1 = context();
 const ctx2 = context();
 const ctx3 = context();
 const ctx4 = context();
-
+const ctx5 = context();
+var yearsArr = [];
+for (var i = 0; i < facts.FACTS_EN.length; i++) {
+    var yearFound = utils.grepFourDigitNumber(facts.FACTS_EN[i]);
+    if (yearFound != null) {
+        yearsArr.push(yearFound)
+    }
+};
+var reqWithYear = events.GetNewYearFactIntent;
+if (yearsArr.length > 0) {
+    reqWithYear = events.GetNewYearFactIntent2; // deep copy of GetNewYearFactIntent
+    reqWithYear.request.intent.slots.FACT_YEAR.value = yearsArr[0];
+};
 describe("Test Part 3", function () {
     describe("Testing conversational elements of GetNewFactIntent 1 of 3", function () {
         var speechResponse = null;
@@ -67,18 +81,37 @@ describe("Test Part 3", function () {
                     var msg = speechResponse.response.outputSpeech.ssml;
                     resultArr.push(msg);
                     var atLeastOneNew = false;
-                    var numPhrasesUsed = calcNumPhrasesIncluded(resultArr, index.GetFactMsg);
+                    var numPhrasesUsed = utils.calcNumPhrasesIncluded(resultArr, index.GetFactMsg);
                     expect(numPhrasesUsed).to.be.gt(1)
                 })
             })
         })
-        describe("Testing conversational elements of GetNewYearFactIntent", function () {
+        describe("Testing conversational elements of GetNewYearFactIntent with valid year", function () {
             var speechResponse = null;
             var speechError = null;
 
             before(function (done) {
-                index.handler(events.GetNewFactIntent, ctx4)
+                index.handler(reqWithYear, ctx4)
                 ctx4.Promise
+                    .then(resp => { speechResponse = resp; done(); })
+                    .catch(err => { speechError = err; done(); })
+            })
+            describe("The response keeps the conversation open", function () {
+                it("should have a reprompt available", () => {
+                    expect(speechResponse.response.reprompt).not.to.be.undefined
+                })
+                it("should not end the alexa session", function () {
+                    expect(speechResponse.response.shouldEndSession).to.be.false
+                })
+            })
+        })
+        describe("Testing conversational elements of GetNewYearFactIntent with non-matching year", function () {
+            var speechResponse = null;
+            var speechError = null;
+
+            before(function (done) {
+                index.handler(events.GetNewYearFactIntent, ctx5)
+                ctx5.Promise
                     .then(resp => { speechResponse = resp; done(); })
                     .catch(err => { speechError = err; done(); })
             })
@@ -93,20 +126,3 @@ describe("Test Part 3", function () {
         })
     })
 });
-function calcNumPhrasesIncluded(msgArr, phraseArr) {
-    // counts the number of these phrases found in the messages
-    // does not account for phrases within phrases
-    var numUsed = 0;
-    for(var i = 0; i<phraseArr.length; i++){
-        var inTheMsg = false;
-        for(var j=0; j<msgArr.length; j++){
-            if(msgArr[j].includes(phraseArr[i])){
-                inTheMsg = true;
-            }
-        }
-        if(inTheMsg){
-            numUsed++;
-        }
-    }
-    return numUsed;
-}
