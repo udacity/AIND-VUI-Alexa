@@ -44,9 +44,9 @@ $ npm test
 ```
 The starter code should pass the starter code tests but fail the rest.  As you complete the tasks ahead, you can use these unit tests (and write more yourself) to quickly test code changes prior to deployment to AWS Lambda.
 
-##### 4. Set up a code editor
-* At this point, you can open your project with a code editor of your choice.  Some free ones that support Node.js include [Atom](https://atom.io/) and [Visual Studio Code](https://code.visualstudio.com/)
-* The javascript skills needed for this project are mostly about following patterns you find in the existing code and general coding constructs such as for loops, if statements, and arrays.  You may need to make liberal use of search engines to find the exact syntax you need, however, if you are not familiar with javascript and Node.js.  Here are a few links that might be helpful:
+##### 4. JavaScript coding
+* At this point, you can open your project with a code editor of your choice.  Some free ones that support JavaScript and Node.js include [Atom](https://atom.io/) and [Visual Studio Code](https://code.visualstudio.com/)
+* Udacity has a free [Intro to JavaScript](https://www.udacity.com/course/intro-to-javascript--ud803) course available that will quickly bring you up to speed on JS syntax.  The JavaScript skills needed for this project primarily require following patterns you find in the existing starter code and the use of general coding constructs such as for loops, conditional statements, and arrays. Here are a few links that might be helpful for quick reference:
     * [js for loops](https://www.w3schools.com/js/js_loop_for.asp)
     * [js conditional statements](https://www.w3schools.com/js/js_if_else.asp)
     * [js arrays](https://www.w3schools.com/js/js_arrays.asp)
