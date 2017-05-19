@@ -21,8 +21,7 @@ var languageStrings = {
             "GET_FACT_MESSAGE": GET_FACT_MSG_EN[0],
             "HELP_MESSAGE": "You can say tell me a fact, or, you can say exit... What can I help you with?",
             "HELP_REPROMPT": "What can I help you with?",
-            "STOP_MESSAGE": "Goodbye!",
-            "SKILL_NAME": "My History Facts"
+            "STOP_MESSAGE": "Goodbye!"
         }
     }
 };
