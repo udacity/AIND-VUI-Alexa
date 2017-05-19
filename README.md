@@ -7,7 +7,7 @@ It's time to create your own Alexa Skill!.  In this project, you’ll build a fu
 
 ### Set up your Amazon accounts
 
-We highly recommend you complete the [Space Geek lab](https://classroom.udacity.com/nanodegrees/nd889/parts/4550d1eb-a3e0-4e9b-9d3c-4f55aa6662b5/modules/38e74312-3173-4456-919d-bcb00a82bfb5/lessons/dc1efdfd-e07f-4a5c-ab35-dbb274a25c88/concepts/4cf534af-99c6-45c1-be50-4b39be711614), which steps you through setting up your Amazon Developer and Amazon AWS accounts as well as the project this one is based on.   If you’ve already done that you can skip this step. 
+We highly recommend you complete the [Space Geek lab](https://classroom.udacity.com/nanodegrees/nd889/parts/4550d1eb-a3e0-4e9b-9d3c-4f55aa6662b5/modules/38e74312-3173-4456-919d-bcb00a82bfb5/lessons/dc1efdfd-e07f-4a5c-ab35-dbb274a25c88/concepts/4cf534af-99c6-45c1-be50-4b39be711614), which steps you through setting up your [Amazon Developer ](https://developer.amazon.com/alexa-skills-kit) and [Amazon AWS](https://aws.amazon.com/) accounts as well as building the project this one is based on.   If you’ve already done that, your accounts are ready to go. 
 *find more detail on this in the classroom or see [Amazon's sample fact skill repo](https://github.com/alexa/skill-sample-nodejs-fact)*
 
 ### Starter Code
@@ -58,7 +58,7 @@ The starter code should pass the starter code tests but fail the rest.  As you c
 ##### 5. Run the Starter Code on AWS Lambda
 * Deploy the starter code to verify that it works with your accounts in its simple form.   This is the same process you went through with the Space Geek Lab.  If you need a refresher, step-by-step instructions are provided in the classroom. 
 
-# Tasks
+# Evaluation
 
 The starter code provides a simple fact skill similar to Space Geek, except a few AI history facts have been provided in an external file, `facts.js`, instead of the space facts.  Each fact includes a 4-digit year in its text, which we will use in the project for a new feature.  
 
@@ -67,42 +67,4 @@ The project consists of three parts:
 2. Add a feature using an additional intent and a slot
 3. Add conversational elements
 
-## Part 1: Customize the fact skill
-##### 1. Choose a history category you wish to use for your skill.  You can continue to use the AI History Facts already started for you if you wish.
-##### 2. Expand the utterances in the `speechAssets/SampleUtterances_en_US.txt` file to include at least 15 appropriate utterances for ` GetNewFactIntent`.   Examples can be found [here](https://github.com/alexa/skill-sample-nodejs-fact/tree/master/speechAssets).
-##### 3. Expand the facts list in `facts.js` such that there are at least 10 distinct facts, where each includes a 4-digit year in its text.  These will be spoken by the Amazon Text-To-Speech algorithm (TTS), so keep in mind where you wish pauses to occur.  To hear how it sounds, enter your sentence in the developer portal under the “Test” section:
-##### 4. Test it.   All “Starter Code” and “Part 1” local unit tests should pass.  Try the skill out by uploading your changes to the Interactive model in the Developer Portal and AWS Lambda.
-
-## Part 2: Add a feature
-In addition to the `GetNewFactIntent` intent already included, add an [intent](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/alexa-skills-kit-interaction-model-reference) including a built-in [slot](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference) named `FACT_YEAR` that will provide the user with a fact matching the year requested.  Name this intent `GetNewYearFactIntent`.  Built-in Amazon slots can be used for the year.  Consider using [AMAZON.FOUR_DIGIT_NUMBER](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference#four_digit_number) for this purpose. This is not required, however, if you prefer to try a different slot definition.
-##### 1. Provide at least 15 utterances for the new intent. 
-##### 2. Complete the TODO’s in `index.js` to implement a handler for `GetNewYearFactIntent` that will provide a fact for the specific year requested, and provide a random fact if the year is not found in the fact list.
-##### 3. Test it.   All “Starter Code”, “Part 1”, and “Part 2” local unit tests should pass.  Try the skill out by uploading your changes to the Interactive model in the Developer Portal and AWS Lambda.
-
-## Part 3: Add conversational elements
-As discussed in the videos, conversations with a VUI will seem more natural if the session window can be left open to continue request/response interactions.  Additionally, adding randomization to the Alexa response text provides a more natural feel to the conversation.
-##### 1. Change your “tell” statements to “ask” statements as directed by the TODO’s in `index.js` and include reprompt messages as necessary.
-##### 2. Change the `GET_FACT_MESSAGE` snippet to an array of at least 5 similar phrases.  Randomize this portion of the Alexa response.
-##### 3. Test it.   All local tests should now pass.  Deploy your changes to the Interactive model in the Developer Portal and AWS Lambda.
-##### 4. Provide a screen capture (PNG) from the Service Simulator in the Developer portal of your skill working.  The screen capture should include the part of the Lambda Request that shows the `GetNewYearFactIntent` and `slot` with the year requested.  The Lambda Response side only needs to show that a fact was provided.  Note that in order to request a slot with the Simulator, you will need to phonetically request a year.  For example, if the year is 2012, the input will need to be “two thousand and twelve” rather than “2012” in the simulator. Save the screen capture for submission with the name `skill_simulator.png`
-
-## Optional Additional Testing
-In addition to testing with unit tests and the Service Simulator, you may find it useful to try your skill with one or more of the following:
-* [Echosim.io](https://echosim.io/): web browser simulator
-* [Alexa app](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/providing-home-cards-for-the-amazon-alexa-app): view card
-* Amazon Echo, Echo Dot, Echo Tap devices: if the device is on the same account as the development code, you can "open" the skill there.
-
-# Submission
-
-ADD PROJECT ASSISTANT INSTRUCTIONS
-
-Submit your work by uploading a .zip file containing the following directories and files:
-- `speechAssets` (directory)
-   - `IntentSchema.json`
-   - `SampleUtterances_en_US.txt`
-- `src` (directory)
-   - `Index.js`
-   - `Facts.js`
-- `skill_simulator.png`
-
-You can view the [BETA] rubric [here](https://docs.google.com/document/d/1R8AZPZzqm8_scGg4jns7S_WvafjoieZpgCEb5QyMju4/edit?usp=sharing)
+Follow the instructions for each part as described in the classroom under "Tasks" for the project.  Once all the unit tests pass, follow the submission instructions to submit your project for review!
