@@ -27,27 +27,27 @@ describe("Starter Code Tests", function () {
         })
         describe("The response is structurally correct", function () {
             it('should not have errored', function () {
-                expect(speechError).to.be.null
+                expect(speechError).to.not.exist
             })
 
             it('should have a speechlet response', function () {
-                expect(speechResponse.response).not.to.be.null
+                expect(speechResponse.response).to.exist
             })
 
             it("should have a spoken response", () => {
-                expect(speechResponse.response.outputSpeech).not.to.be.null
+                expect(speechResponse.response.outputSpeech).to.exist
             })
 
             it("should have a card response", () => {
-                expect(speechResponse.response.card).not.to.be.null
+                expect(speechResponse.response.card).to.exist
             })
 
             it("should have a reprompt available", () => {
-                expect(speechResponse.response.reprompt).not.to.be.null
+                expect(speechResponse.response.reprompt).to.exist
             })
 
             it("should not end the alexa session", function () {
-                expect(speechResponse.response.shouldEndSession).not.to.be.null
+                expect(speechResponse.response.shouldEndSession).to.exist
                 expect(speechResponse.response.shouldEndSession).to.be.false
             })
         })
@@ -64,27 +64,27 @@ describe("Starter Code Tests", function () {
         })
         describe("The response is structurally correct", function () {
             it('should not have errored', function () {
-                expect(speechError).to.be.null
+                expect(speechError).to.not.exist
             })
 
             it('should have a speechlet response', function () {
-                expect(speechResponse.response).not.to.be.null
+                expect(speechResponse.response).to.exist
             })
 
             it("should have a spoken response", () => {
-                expect(speechResponse.response.outputSpeech).not.to.be.null
+                expect(speechResponse.response.outputSpeech).to.exist
             })
 
             it("should have no card response", () => {
-                expect(speechResponse.response.card).to.equal.undefined
+                expect(speechResponse.response.card).to.not.exist
             })
 
             it("should have no reprompt", () => {
-                expect(speechResponse.response.reprompt).to.equal.undefined
+                expect(speechResponse.response.reprompt).to.not.exist
             })
 
             it("should end the alexa session", function () {
-                expect(speechResponse.response.shouldEndSession).not.to.be.null
+                expect(speechResponse.response.shouldEndSession).to.exist
                 expect(speechResponse.response.shouldEndSession).to.be.true
             })
         })
@@ -101,27 +101,27 @@ describe("Starter Code Tests", function () {
         })
         describe("The response is structurally correct", function () {
             it('should not have errored', function () {
-                expect(speechError).to.be.null
+                expect(speechError).to.not.exist
             })
 
             it('should have a speechlet response', function () {
-                expect(speechResponse.response).not.to.be.null
+                expect(speechResponse.response).to.exist
             })
 
             it("should have a spoken response", () => {
-                expect(speechResponse.response.outputSpeech).not.to.be.null
+                expect(speechResponse.response.outputSpeech).to.exist
             })
 
             it("should have no card response", () => {
-                expect(speechResponse.response.card).to.equal.undefined
+                expect(speechResponse.response.card).to.not.exist
             })
 
             it("should have no reprompt", () => {
-                expect(speechResponse.response.reprompt).to.equal.undefined
+                expect(speechResponse.response.reprompt).to.not.exist
             })
 
             it("should end the alexa session", function () {
-                expect(speechResponse.response.shouldEndSession).not.to.be.null
+                expect(speechResponse.response.shouldEndSession).to.exist
                 expect(speechResponse.response.shouldEndSession).to.be.true
             })
         })
@@ -140,15 +140,15 @@ describe("Starter Code Tests", function () {
             it('should not have errored', function () {
                 var msg = speechResponse.response.outputSpeech.ssml;
                 resultArr.push(msg);
-                expect(speechError).to.be.null
+                expect(speechError).to.not.exist
             })
 
             it('should have a speechlet response', function () {
-                expect(speechResponse.response).not.to.be.null
+                expect(speechResponse.response).to.exist
             })
 
             it("should have a spoken response", () => {
-                expect(speechResponse.response.outputSpeech).not.to.be.null
+                expect(speechResponse.response.outputSpeech).to.exist
             })
         })
     });
@@ -167,7 +167,7 @@ describe("Starter Code Tests", function () {
             it("should have a card response", () => {
                 var msg = speechResponse.response.outputSpeech.ssml;
                 resultArr.push(msg);
-                expect(speechResponse.response.card).not.to.be.null
+                expect(speechResponse.response.card).to.exist
             })
         })
     });

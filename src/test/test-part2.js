@@ -57,7 +57,7 @@ describe("Test Part 2", function () {
                     slots = intents[i].slots
                 }
             }
-            expect(slots).is.not.null
+            expect(slots).to.exist
         })
         it('should include a slot named FACT_YEAR', function () {
             var hasCorrectSlot = false;
@@ -90,15 +90,15 @@ describe("Test Part 2", function () {
                 expect(speechError).to.be.null
             })
             it('should have a speechlet response', function () {
-                expect(speechResponse.response).not.to.be.null
+                expect(speechResponse.response).to.exist
             })
 
             it("should have a spoken response", () => {
-                expect(speechResponse.response.outputSpeech).not.to.be.null
+                expect(speechResponse.response.outputSpeech).to.exist
             })
 
             it("should have a card response", () => {
-                expect(speechResponse.response.card).not.to.be.null
+                expect(speechResponse.response.card).to.exist
             })
         })
         describe("The response is functionally correct", function () {
