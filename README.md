@@ -27,22 +27,18 @@ Install your starter code locally.
 ##### 2. Install dependencies for the project
 
 * Navigate to the `AIND-VUI-Alexa/src` directory of the starter code and open a terminal window.  
-* The AWS Lambda function we used in the Space Geek lab was built on Node.js and included a linked [alexa-sdk](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs) library for Alexa.  We will install this locally as well.  Install the `alexa-sdk` library with the following command:
+* The dependencies we need are listed in the `package.json` file and include the [alexa-sdk](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs) library for Alexa as well as  [mocha](https://mochajs.org/) test framework for Node.js along with [chai](http://chaijs.com/) and [aws-lambda-mock-context](https://www.npmjs.com/package/aws-lambda-mock-context) for local unit testing.  Install them all with the following command:
 ```shell
-$ npm install --save alexa-sdk
+$ npm install
 ```
 * There should now be a directory named `node_modules` within the `src` directory.  This is how Node.js attaches libraries for your code.
 
-##### 3. Install development dependencies for unit testing
-* We will be using the [mocha](https://mochajs.org/) test framework for Node.js along with [chai](http://chaijs.com/) and [aws-lambda-mock-context](https://www.npmjs.com/package/aws-lambda-mock-context) for local unit testing. Install these with the following command:
-```shell
-$ npm install --save-dev mocha chai aws-lambda-mock-context
-```
-* You can run the provided unit tests from the command line within the `src` directory with the following command.  Try it now:
+##### 3. Unit testing
+* You can now run the provided unit tests from the command line within the `src` directory with the following command.  Try it now:
 ```shell
 $ npm test
 ```
-The starter code should pass the starter code tests but fail the rest.  As you complete the tasks ahead, you can use these unit tests (and write more yourself) to quickly test code changes prior to deployment to AWS Lambda.
+The test code is in four parts:  "Part 1", "Part 2", "Part 3", and "Starter Code". The starter code tests should pass and all others should fail.  You may have to scroll up to see the passing tests.  As you complete the tasks ahead, you can use these unit tests (and write more yourself) to quickly test code changes prior to deployment to AWS Lambda.
 
 ##### 4. JavaScript coding
 * At this point, you can open your project with a code editor of your choice.  Some free ones that support JavaScript and Node.js include [Atom](https://atom.io/) and [Visual Studio Code](https://code.visualstudio.com/)
