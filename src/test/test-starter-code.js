@@ -38,10 +38,6 @@ describe("Starter Code Tests", function () {
                 expect(speechResponse.response.outputSpeech).to.exist
             })
 
-            it("should have a card response", () => {
-                expect(speechResponse.response.card).to.exist
-            })
-
             it("should have a reprompt available", () => {
                 expect(speechResponse.response.reprompt).to.exist
             })
@@ -73,10 +69,6 @@ describe("Starter Code Tests", function () {
 
             it("should have a spoken response", () => {
                 expect(speechResponse.response.outputSpeech).to.exist
-            })
-
-            it("should have no card response", () => {
-                expect(speechResponse.response.card).to.not.exist
             })
 
             it("should have no reprompt", () => {
@@ -111,11 +103,7 @@ describe("Starter Code Tests", function () {
             it("should have a spoken response", () => {
                 expect(speechResponse.response.outputSpeech).to.exist
             })
-
-            it("should have no card response", () => {
-                expect(speechResponse.response.card).to.not.exist
-            })
-
+            
             it("should have no reprompt", () => {
                 expect(speechResponse.response.reprompt).to.not.exist
             })
