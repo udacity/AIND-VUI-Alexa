@@ -7,7 +7,7 @@ It's time to create your own Alexa Skill!.  In this project, you’ll build a fu
 
 ### Set up your Amazon accounts
 
-We highly recommend you complete the [Space Geek lab](https://classroom.udacity.com/nanodegrees/nd889/parts/4550d1eb-a3e0-4e9b-9d3c-4f55aa6662b5/modules/38e74312-3173-4456-919d-bcb00a82bfb5/lessons/dc1efdfd-e07f-4a5c-ab35-dbb274a25c88/concepts/4cf534af-99c6-45c1-be50-4b39be711614), which steps you through setting up your [Amazon Developer ](https://developer.amazon.com/alexa-skills-kit) and [Amazon AWS](https://aws.amazon.com/) accounts as well as building the project this one is based on.   If you’ve already done that, your accounts are ready to go. 
+We highly recommend you complete the Space Geek lab in the classroom, which steps you through setting up your [Amazon Developer ](https://developer.amazon.com/alexa-skills-kit) and [Amazon AWS](https://aws.amazon.com/) accounts as well as building the project this one is based on.   If you’ve already done that, your accounts are ready to go. 
 *find more detail on this in the classroom or see [Amazon's sample fact skill repo](https://github.com/alexa/skill-sample-nodejs-fact)*
 
 ### Starter Code
