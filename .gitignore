@@ -1,3 +1,7 @@
 src/node_modules/
 *.zip
 *.log
+
+__pycache__
+*.pyc
+
